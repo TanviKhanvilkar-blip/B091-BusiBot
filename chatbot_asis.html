@@ -7,31 +7,53 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #141e30, #243b55); /* Dark blue gradient */
-            color: white;
-            text-align: center;
-            padding: 50px;
-            margin: 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            margin: 0;
+            color: white;
+            text-align: center;
         }
-        h1 {
-            font-size: 2.5em;
+        
+        .chat-container {
+            width: 90%;
+            max-width: 500px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             margin-bottom: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to My Chatbot</h1>
 
+    <div class="chat-container">
+        <h1>Welcome to Busibot!</h1>
+        <h3 style="color: black;">Busibot is your personal assistant, here to help with startup ideas, strategy, and business advice. Just type your questions in the chat, and Busibot will provide instant guidance tailored to your needs.</h3>
+        <h4 style="color: black;">How to Use: <br>
+            1️⃣ Click on the chatbot in the bottom right corner.<br>
+            2️⃣ Type your question—whether it's about business plans, marketing, or funding. <br>
+            3️⃣ Get instant responses and actionable insights! <br>
+            
+            💡 Tip: Ask specific questions like "How do I start an online business?"  <br> for the best results. <br>
+            
+            Go ahead, start chatting now! 😊</h4>
+    </div>
+
+    <!-- Botpress Webchat Script -->
+    
     <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
     <script src="https://files.bpcontent.cloud/2025/02/15/22/20250215223333-7FZLOJYJ.js"></script>
-
-    <!-- Botpress Webchat Embed Script -->
-    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    
     <script>
         window.botpressWebChat.init({
             "botId": "4efa2b49-68af-4cc5-a0c1-5ab65670b3b7",
@@ -40,15 +62,25 @@
             "messagingUrl": "https://messaging.botpress.cloud",
             "botName": "Busibot",
             "showPoweredBy": false,
-            "theme": "dark",
+            "containerWidth": "100%",
             "layout": "embedded",
             "showCloseButton": true
         });
+
+        // Wait for the bot to load before showing it
+        window.addEventListener("load", () => {
+            window.botpressWebChat.sendEvent({ type: 'show' });
+        });
     </script>
+
 </body>
 </html>
 
 
+
+
+
+    
 
 
     
